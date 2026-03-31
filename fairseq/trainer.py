@@ -761,7 +761,7 @@ class Trainer(object):
             epoch=1,
             data_buffer_size=self.cfg.dataset.data_buffer_size,
             disable_iterator_cache=disable_iterator_cache,
-            skip_remainder_batch=False,
+            skip_remainder_batch=self.cfg.optimization.skip_remainder_batch,
         )
         self.reset_dummy_batch(batch_iterator.first_batch)
         return batch_iterator
